@@ -8,7 +8,7 @@ const l = document.querySelector('.location');
  async function displayUser(username, n, b, l) { //se añaden variables n, b y l
   n.textContent = 'cargando...';
   const response = await fetch(`${usersEndpoint}/${username}`);
-  console.log(data);
+  const data = await response.Json();//se crea una funcion en la que se devuelven los datos en json que estan en response, se le asignan a data
   n.textContent = `${data.name}`;//cambie ' por `
   b.textContent = `${data.blog}`;//quite los signos $ de la variable
   l.textContent = `${data.location}`;
